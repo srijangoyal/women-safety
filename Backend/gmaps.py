@@ -3,6 +3,7 @@ os.chdir('D:\CODEX')
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import dill as pickle
 
 
 dataset = pd.read_csv('gmaps.csv',encoding='windows-1252')
@@ -38,6 +39,10 @@ from sklearn.linear_model import LogisticRegression
 classifier = LogisticRegression()
 classifier.fit(X_train, y_train)
 
+filename = 'model.pk'
+with open('./models/'+filename, 'wb') as file:
+    pickle.dump(classifier, file)
+
 
 y_pred = classifier.predict(X_test)
 
@@ -45,4 +50,3 @@ from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 
 #98.24% accuaracy rate
-

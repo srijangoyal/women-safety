@@ -27,7 +27,7 @@ class FormDialog extends React.Component{
     }
 
     submitForm = async () => {
-        const { handleClose, map, setDirections, handleLoader } = this.props;
+        const { handleClose, map, setDirections, handleLoader, feedback } = this.props;
         handleClose();
         handleLoader();
         const { starting, destination, city } = this.state;
@@ -38,6 +38,7 @@ class FormDialog extends React.Component{
             destination: "",
             city: "Delhi",
         });
+        feedback();
     }
     
     render(){

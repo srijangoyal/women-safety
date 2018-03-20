@@ -19,7 +19,7 @@ class FormDialog extends React.Component{
         this.state = {
             starting: "",
             destination: "",
-            city: "Delhi",
+            city: "",
         }
 
         this.submitForm = this.submitForm.bind(this);
@@ -36,7 +36,7 @@ class FormDialog extends React.Component{
         this.setState({
             starting: "",
             destination: "",
-            city: "Delhi",
+            city: "",
         });
         feedback();
     }
